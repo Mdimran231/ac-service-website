@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Custom Theme Settings */
+@layer base {
+  body {
+    background-color: #0f172a; /* Deep Dark Blue */
+    color: #f8fafc; /* Soft White Text */
+    @apply antialiased; /* Tailwind ki smooth font class */
+  }
+}
+
+/* Glassmorphism for Dark Theme */
+/* Tip: Isse aap code mein direct "glass-dark" class ki tarah use kar sakte hain */
+@layer components {
+  .glass-dark {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400;
+  }
+}
