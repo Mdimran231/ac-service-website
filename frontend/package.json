@@ -4,12 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    
     "build": "vite build",
     "lint": "eslint .",
-    
     "dev": "vite --port 5179",
-  "preview": "vite preview --port 5179"
+    "preview": "vite preview --port 5179"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.1",
@@ -18,6 +16,7 @@
     "lucide-react": "^0.577.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-parallax": "^3.5.2",
     "react-router-dom": "^7.13.1"
   },
   "devDependencies": {
@@ -34,6 +33,4 @@
     "tailwindcss": "^4.2.1",
     "vite": "^8.0.0"
   }
-
-  
 }
