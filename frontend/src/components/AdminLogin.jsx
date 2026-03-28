@@ -14,7 +14,7 @@ const AdminLogin = () => {
         setLoading(true); // Loading shuru
         
         try {
-            const res = await axios.post('http://localhost:8082/api/auth/login', {
+            const res = await axios.post('https://ac-service-website-backend.onrender.com/api/auth/login', {
                 username, 
                 password
             });

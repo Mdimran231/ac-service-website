@@ -15,7 +15,7 @@ const BookingForm = () => {
         e.preventDefault();
         try {
             // Backend port 8082 aur endpoint /api/bookings/add confirm karein
-            const res = await axios.post('http://localhost:8082/api/bookings/add', {
+            const res = await axios.post('https://ac-service-website-backend.onrender.com/api/bookings/add', {
                 ...formData,
                 email: "no-email@bhopal.com", // Backend requirement agar ho toh
                 status: "PENDING"
@@ -26,7 +26,7 @@ const BookingForm = () => {
                 
                 // WhatsApp notification (Optional but good for business)
                 const text = `*New Booking Alert!*%0A*Name:* ${formData.customerName}%0A*Brand:* ${formData.acBrand}%0A*Service:* ${formData.serviceType}`;
-                window.open(`https://wa.me/919876543210?text=${text}`, '_blank');
+                window.open(`https://wa.me/918540038107?text=${text}`, '_blank');
                 
                 // Form reset
                 setFormData({ customerName: '', phone: '', address: '', serviceType: '', acBrand: '', date: '' });
@@ -79,6 +79,7 @@ const BookingForm = () => {
                     <option value="Gas Refill">Gas Refill</option>
                     <option value="Deep Cleaning">Deep Cleaning</option>
                     <option value="Installation">Installation</option>
+                    <option value="Others">Others</option>
                 </select>
 
                 <textarea 

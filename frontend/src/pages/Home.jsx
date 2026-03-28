@@ -87,7 +87,7 @@ function Home() {
 
             <h1 className="text-5xl md:text-[5.8rem] font-black text-slate-900 leading-[0.93] mb-6 md:mb-10 tracking-tighter">
               Cooling <br />
-              <span className="text-sky-500 italic drop-shadow-sm">Redefined.</span>
+              <span className="text-sky-500 italic drop-shadow-sm">Refrigeration.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-600 mb-12 max-w-lg leading-relaxed font-medium">
