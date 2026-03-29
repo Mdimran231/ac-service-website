@@ -320,7 +320,7 @@ function Home() {
           {[
             { q: "Kya aap Sunday ko bhi service dete hain?", a: "Ji haan! Hum hafte ke 7 din aur 24 ghante Bhopal mein available hain." },
             { q: "Service ke baad koi warranty milti hai?", a: "Bilkul! Hum har service par 30-day ki fix warranty dete hain." },
-            { q: "Visiter charge kitna hai?", a: "Humara visiting charge sirf ₹149 hai, jo repair hone par adjust ho jata hai." }
+            { q: "Visiter charge kitna hai?", a: "Humara visiting charge sirf ₹349 hai, jo repair hone par adjust ho jata hai." }
           ].map((faq, i) => (
             <details key={i} className={`group p-6 rounded-2xl ${glassStyle} cursor-pointer`}>
               <summary className="font-bold text-slate-800 list-none flex justify-between items-center">
