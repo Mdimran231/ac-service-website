@@ -82,12 +82,12 @@ const BookingForm = () => {
                     <option value="Others">Others</option>
                 </select>
 
-                <textarea 
-                    placeholder="Your Address in Bhopal" 
-                    className="w-full p-4 rounded-2xl bg-white/60 border-none outline-none focus:ring-2 focus:ring-sky-400 transition-all shadow-sm min-h-[100px]" 
-                    onChange={(e) => setFormData({...formData, address: e.target.value})} 
-                    required 
-                />
+               <textarea 
+               placeholder="Your Address in Patna" 
+               className="w-full p-4 rounded-2xl bg-white/60 border-none outline-none focus:ring-2 focus:ring-sky-400 transition-all shadow-sm min-h-[100px]" 
+               onChange={(e) => setFormData({...formData, address: e.target.value})} 
+               required 
+             />
 
                 <input 
                     type="date" 

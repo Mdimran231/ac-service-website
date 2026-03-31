@@ -25,7 +25,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="flex flex-col gap-3">
             <h4 className="font-bold text-slate-900 mb-2 uppercase text-xs tracking-widest">Connect</h4>
-            <p className="flex items-center gap-2 text-slate-600"><MapPin size={18} /> Police Colony, Patna - 200008</p>
+            <p className="flex items-center gap-2 text-slate-600"><MapPin size={18} /> Police Colony, Patna - 800002</p>
             <p className="flex items-center gap-2 text-slate-600"><Phone size={18} /> +91 8540038107</p>
             <div className="flex gap-4 mt-2">
               <Instagram className="text-slate-400 hover:text-pink-500 cursor-pointer" size={20} />
