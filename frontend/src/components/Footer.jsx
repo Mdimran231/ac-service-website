@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand Info */}
           <div>
-            <h3 className="font-black text-2xl text-slate-900 mb-4">ACFIXWALA</h3>
+            <h3 className="font-black text-2xl text-slate-900 mb-4">Cool Refrigeration</h3>
             <p className="text-slate-500 leading-relaxed">
               Patna's most trusted AC service provider. Expert repairs and deep cleaning in just 60 minutes.
             </p>
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-slate-200 text-center text-slate-400 text-sm font-medium tracking-widest uppercase">
-          © 2026 AC FIX WALA Patna. Crafted for Comfort.
+          © 2026 Cool Refrigeration Patna. Crafted for Comfort.
         </div>
       </div>
     </footer>
