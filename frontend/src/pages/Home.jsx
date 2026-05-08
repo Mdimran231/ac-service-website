@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Assets
-import heroLogo from '../assets/logo2-removebg-preview.png'; 
+import heroLogo from '../assets/logo2-removebg-preview.png';
 import BookingForm from '../components/BookingForm';
 import uninstallationImg from '../assets/uninstallation.jpg';
 import washing from '../assets/washing.jpg';
@@ -20,9 +20,9 @@ function Home() {
   const glassStyle = "bg-white/40 backdrop-blur-2xl border border-white/60 shadow-[0_20px_40px_rgba(31,38,135,0.07)]";
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className="relative min-h-screen bg-gradient-to-br from-[#f8fafc] via-[#e2eef9] to-[#f1f5f9] text-slate-800 overflow-hidden font-sans"
     >
       {/* Background Accents */}
@@ -32,74 +32,102 @@ function Home() {
       {/* --- HERO SECTION --- */}
       <header className="relative pt-28 md:pt-36 pb-20 px-6 overflow-hidden min-h-[85vh] flex items-center">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-          
-          {/* RIGHT SIDE: THE BIG LOGO WITH FLOATING MOTION (Mobile par upar dikhega) */}
-          {/* RIGHT SIDE: THE BIG LOGO WITH ACTIVE FLOATING MOTION */}
-<motion.div 
-  initial={{ scale: 0.8, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="relative order-1 lg:order-2 flex justify-center items-center group"
->
-  <div className="relative z-10">
-    {/* --- FLOATING MOTION CONTAINER --- */}
-    <motion.div
-      animate={{ y: [0, -40, 0] }} // Range badha di (0 se -35px tak)
-      transition={{ 
-        duration: 2, // Speed badha di (2 second mein ek round)
-        repeat: Infinity, 
-        ease: "easeInOut" 
-      }}
-      className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] flex justify-center items-center transition-transform duration-500 group-hover:scale-105"
-    >
-      {/* --- THE LOGO IMAGE --- */}
-      <img 
-        src={heroLogo} 
-        alt="Cool Refrigeration Premium Logo" 
-        className="w-full h-full object-contain filter drop-shadow-[0_40px_70px_rgba(14,165,233,0.5)] brightness-110 contrast-110"
-      />
 
-      {/* Floating Badges (Desktop Only) */}
-      <motion.div 
-        className="hidden md:block absolute -top-4 right-0 bg-white/90 backdrop-blur-md p-6 rounded-[2.5rem] shadow-2xl border border-white text-center"
-      >
-        <p className="text-4xl font-black text-sky-500 italic leading-none drop-shadow-sm">10+</p>
-        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">Years Exp.</p>
-      </motion.div>
-    </motion.div>
-    
-    {/* Background Glow Effect */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-sky-400/15 blur-[120px] -z-20 rounded-full animate-pulse-slow" />
-  </div>
-</motion.div>
+          {/* RIGHT SIDE: LOGO + NEW 2ND HAND AC BADGE */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative order-1 lg:order-2 flex justify-center items-center group"
+          >
+            <div className="relative z-10">
+              <motion.div
+                animate={{ y: [0, -40, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] flex justify-center items-center"
+              >
+                <img
+                  src={heroLogo}
+                  alt="Cool Refrigeration Patna AC Service"
+                  className="w-full h-full object-contain filter drop-shadow-[0_40px_70px_rgba(14,165,233,0.5)] brightness-110 contrast-110"
+                />
 
-          {/* LEFT SIDE: TEXT CONTENT (Mobile par niche aayega) */}
-          <motion.div 
+                {/* Floating Badge 1: Experience */}
+                <motion.div
+                  className="hidden md:block absolute -top-4 right-0 bg-white/90 backdrop-blur-md p-6 rounded-[2.5rem] shadow-2xl border border-white text-center"
+                >
+                  <p className="text-4xl font-black text-sky-500 italic leading-none">10+</p>
+                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">Years Exp.</p>
+                </motion.div>
+
+                {/* --- IMPROVED RESPONSIVE FLOATING BADGE (2nd Hand AC) --- */}
+                <motion.div
+                  whileHover={{ scale: 1.05, rotate: 3 }}
+                  className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-10 bg-amber-400 p-3 md:p-6 rounded-[1.8rem] md:rounded-[2.5rem] shadow-2xl border-2 md:border-4 border-white cursor-pointer group/sale z-30 max-w-[120px] md:max-w-[180px]"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    {/* Icon chota kar diya mobile ke liye */}
+                    <Zap size={16} className="text-white mb-0.5 animate-pulse md:size-[24px]" fill="white" />
+
+                    <p className="text-[8px] md:text-[10px] font-black text-amber-900 uppercase tracking-tighter">
+                      Big Sale
+                    </p>
+
+                    {/* Text size responsive hai: mobile par chota, desktop par bada */}
+                    <p className="text-[12px] md:text-xl font-black text-slate-900 leading-tight">
+                      2nd Hand <br />
+                      <span className="text-white">AC Units</span>
+                    </p>
+
+                    {/* Button ko mobile par aur compact kar diya */}
+                    <Link
+                      to="/services"
+                      className="mt-1.5 text-[7px] md:text-[9px] font-bold bg-white/40 px-2 md:px-3 py-0.5 md:py-1 rounded-full text-slate-900 group-hover/sale:bg-white transition-colors"
+                    >
+                      VIEW STOCK
+                    </Link>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-sky-400/15 blur-[120px] -z-20 rounded-full animate-pulse-slow" />
+            </div>
+          </motion.div>
+
+          {/* LEFT SIDE: TEXT CONTENT */}
+          <motion.div
             initial={{ x: -60, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-left order-2 lg:order-1"
           >
-            <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/60 border border-white/80 shadow-sm mb-6 md:mb-10 hover:bg-white/80 transition-colors">
-              <ThermometerSnowflake size={18} className="text-sky-500 animate-spin-slow" />
-              <span className="text-sky-700 text-xs font-black tracking-widest uppercase italic">Patna's #1 AC Experts</span>
+            <div className="flex flex-wrap gap-3 mb-6 md:mb-10">
+              <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/60 border border-white/80 shadow-sm hover:bg-white/80 transition-colors">
+                <ThermometerSnowflake size={18} className="text-sky-500" />
+                <span className="text-sky-700 text-xs font-black tracking-widest uppercase italic">Patna's #1 AC Experts</span>
+              </div>
+
+              {/* --- NEW: SEARCH OPTIMIZED TAG --- */}
+              <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-amber-100 border border-amber-200 shadow-sm">
+                <span className="text-amber-700 text-xs font-black tracking-widest uppercase">Best Deals on Used ACs</span>
+              </div>
             </div>
 
             <h1 className="text-5xl md:text-[5.8rem] font-black text-slate-900 leading-[0.93] mb-6 md:mb-10 tracking-tighter">
               Cooling <br />
-              <span className="text-sky-500 italic drop-shadow-sm">Refrigeration.</span>
+              <span className="text-sky-500 italic">Refrigeration.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-600 mb-12 max-w-lg leading-relaxed font-medium">
-              Ab Patna mein payein <span className="text-slate-900 font-bold underline decoration-sky-400 underline-offset-4">Premium Service</span> within 60 mins. Expert engineers, zero stress!
+              Patna's trusted destination for <span className="text-slate-900 font-bold">Premium AC Service</span> & <span className="text-amber-600 font-bold underline decoration-amber-400 underline-offset-4">Certified Used AC Sales</span>. Within 60 mins delivery!
             </p>
 
             <div className="flex flex-wrap gap-6 items-center">
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                href="#booking-section" 
-                className="bg-slate-900 text-white px-12 py-5 rounded-[2rem] font-black text-xl shadow-2xl shadow-slate-300 flex items-center gap-4 group"
+                href="#booking-section"
+                className="bg-slate-900 text-white px-12 py-5 rounded-[2rem] font-black text-xl shadow-2xl flex items-center gap-4 group"
               >
                 Book Now
                 <div className="bg-sky-500 p-1.5 rounded-full group-hover:rotate-45 transition-transform">
@@ -120,9 +148,9 @@ function Home() {
           { icon: <Wrench size={32} />, title: "Expert Care", desc: "Certified engineers for all major AC brands." },
           { icon: <Shield size={32} />, title: "Fix Warranty", desc: "30-day service guarantee for peace of mind." }
         ].map((item, index) => (
-          <motion.div 
-            key={index} 
-            whileHover={{ scale: 1.05 }} 
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
             className={`p-10 rounded-[2.5rem] ${glassStyle} group transition-all text-center md:text-left`}
           >
             <div className="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center text-sky-600 mb-6 mx-auto md:mx-0 group-hover:bg-sky-500 group-hover:text-white transition-colors">
@@ -134,10 +162,10 @@ function Home() {
         ))}
       </section>
 
-     
+
       {/* --- DIRECT CALL SECTION --- */}
       <section className="py-12 px-6">
-        <motion.div 
+        <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
@@ -152,9 +180,9 @@ function Home() {
               <p className="text-slate-600 font-medium text-lg">Abhi call karein aur 60 min mein cooling payein! ❄️</p>
             </div>
             <div className="flex flex-col items-center md:items-end gap-4">
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.05 }}
-                href="tel:+918934247456" 
+                href="tel:+918934247456"
                 className="flex items-center gap-4 bg-slate-900 text-white px-8 py-5 rounded-2xl shadow-2xl hover:bg-sky-600 transition-all duration-300"
               >
                 <Zap size={24} />
@@ -169,7 +197,7 @@ function Home() {
         </motion.div>
       </section>
 
-     {/* --- SERVICES SECTION (AC Focus) --- */}
+      {/* --- SERVICES SECTION (AC Focus) --- */}
       <section id="services" className="py-20 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Our <span className="text-sky-500">Expert Services</span></h2>
@@ -181,7 +209,7 @@ function Home() {
             { id: "Ac-Repair", title: "AC Repairing", desc: "Cooling nahi ho rahi? Humne sab theek kar dena hai.", img: repairing, price: "Starts @ ₹299" },
             { id: "leakage-repair", title: "Leakage Fix", desc: "Relocating your AC safely with professional gas pump-down.", img: uninstallationImg, price: "Starts @ ₹499" },
             { id: "split-ac-jet", title: "Jet Cleaning", desc: "Deep cleaning takki aapko mile fresh hawa.", img: service, price: "Starts @ ₹499" },
-            { id: "installation", title: "Installation", desc: "Naya AC liya hai? Safe installation ke liye call karein.", img: installation, price: "Starts @ ₹799"}
+            { id: "installation", title: "Installation", desc: "Naya AC liya hai? Safe installation ke liye call karein.", img: installation, price: "Starts @ ₹799" }
           ].map((service, idx) => (
             <motion.div key={idx} whileHover={{ y: -12 }} className={`rounded-[2.5rem] ${glassStyle} relative overflow-hidden group border-none shadow-lg bg-white`}>
               <Link to={`/service/${service.id}`}>
@@ -254,57 +282,57 @@ function Home() {
       </section>
 
       {/* --- BRANDS SECTION (TRUST BUILDER) --- */}
-<section className="py-20 relative overflow-hidden bg-white/20 backdrop-blur-md border-y border-white/50">
-  <div className="max-w-7xl mx-auto px-6">
-    <motion.p 
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      className="text-center text-slate-400 font-black text-xs uppercase tracking-[0.3em] mb-12"
-    >
-      Authorized Service Partners for All Major Brands
-    </motion.p>
-    
-    <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
-      {[
-        { name: "LG", color: "hover:text-[#a50034]" },
-        { name: "SAMSUNG", color: "hover:text-[#034ea2]" },
-        { name: "VOLTAS", color: "hover:text-[#005da4]" },
-        { name: "DAIKIN", color: "hover:text-[#00a1e4]" },
-        { name: "LLOYD", color: "hover:text-[#ed1c24]" },
-        { name: "BLUE STAR", color: "hover:text-[#004a91]" },
-        { name: "HITACHI", color: "hover:text-[#ff0000]" },
-        { name: "WHIRLPOOL", color: "hover:text-[#000000]" },
-        { name: "GODREJ", color: "hover:text-[#000000]" },
-        { name: "CARRIER", color: "hover:text-[#000000]" },
-        { name: "MITSUBISHI", color: "hover:text-[#000000]" },
-        { name: "HAIER", color: "hover:text-[#000000]" },
-        {name:"O GENERAL", color: "hover:text-[#000000]"}
-        
-      ].map((brand, idx) => (
-        <motion.span
-          key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 0.5, y: 0 }}
-          whileHover={{ opacity: 1, scale: 1.1 }}
-          transition={{ delay: idx * 0.1 }}
-          className={`text-2xl md:text-4xl font-black tracking-tighter cursor-default transition-all duration-300 text-slate-400 ${brand.color}`}
-        >
-          {brand.name}
-        </motion.span>
-      ))}
-      <p>All type of ACs are serviced here</p>
-    </div>
-    
+      <section className="py-20 relative overflow-hidden bg-white/20 backdrop-blur-md border-y border-white/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-center text-slate-400 font-black text-xs uppercase tracking-[0.3em] mb-12"
+          >
+            Authorized Service Partners for All Major Brands
+          </motion.p>
 
-    {/* Small Note */}
-    <div className="mt-12 flex justify-center">
-      <div className="px-4 py-2 rounded-xl bg-sky-500/10 border border-sky-100 flex items-center gap-2">
-        <ShieldCheck size={16} className="text-sky-500" />
-        <span className="text-[10px] font-bold text-sky-700 uppercase tracking-wider">100% Original Spare Parts Guaranteed</span>
-      </div>
-    </div>
-  </div>
-</section>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
+            {[
+              { name: "LG", color: "hover:text-[#a50034]" },
+              { name: "SAMSUNG", color: "hover:text-[#034ea2]" },
+              { name: "VOLTAS", color: "hover:text-[#005da4]" },
+              { name: "DAIKIN", color: "hover:text-[#00a1e4]" },
+              { name: "LLOYD", color: "hover:text-[#ed1c24]" },
+              { name: "BLUE STAR", color: "hover:text-[#004a91]" },
+              { name: "HITACHI", color: "hover:text-[#ff0000]" },
+              { name: "WHIRLPOOL", color: "hover:text-[#000000]" },
+              { name: "GODREJ", color: "hover:text-[#000000]" },
+              { name: "CARRIER", color: "hover:text-[#000000]" },
+              { name: "MITSUBISHI", color: "hover:text-[#000000]" },
+              { name: "HAIER", color: "hover:text-[#000000]" },
+              { name: "O GENERAL", color: "hover:text-[#000000]" }
+
+            ].map((brand, idx) => (
+              <motion.span
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 0.5, y: 0 }}
+                whileHover={{ opacity: 1, scale: 1.1 }}
+                transition={{ delay: idx * 0.1 }}
+                className={`text-2xl md:text-4xl font-black tracking-tighter cursor-default transition-all duration-300 text-slate-400 ${brand.color}`}
+              >
+                {brand.name}
+              </motion.span>
+            ))}
+            <p>All type of ACs are serviced here</p>
+          </div>
+
+
+          {/* Small Note */}
+          <div className="mt-12 flex justify-center">
+            <div className="px-4 py-2 rounded-xl bg-sky-500/10 border border-sky-100 flex items-center gap-2">
+              <ShieldCheck size={16} className="text-sky-500" />
+              <span className="text-[10px] font-bold text-sky-700 uppercase tracking-wider">100% Original Spare Parts Guaranteed</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* --- BOOKING FORM SECTION --- */}
       <section id="booking-section" className="py-20 px-6">
