@@ -30,6 +30,7 @@ function Home() {
       <div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-blue-100/60 blur-[100px] -z-10" />
 
       {/* --- HERO SECTION --- */}
+      {/* --- HERO SECTION --- */}
       <header className="relative pt-28 md:pt-36 pb-20 px-6 overflow-hidden min-h-[85vh] flex items-center">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
 
@@ -60,32 +61,18 @@ function Home() {
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">Years Exp.</p>
                 </motion.div>
 
-                {/* --- IMPROVED RESPONSIVE FLOATING BADGE (2nd Hand AC) --- */}
+                {/* --- NEW: FLOATING BADGE 2 (2nd Hand AC Selling) --- */}
                 <motion.div
-                  whileHover={{ scale: 1.05, rotate: 3 }}
-                  className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-10 bg-amber-400 p-3 md:p-6 rounded-[1.8rem] md:rounded-[2.5rem] shadow-2xl border-2 md:border-4 border-white cursor-pointer group/sale z-30 max-w-[120px] md:max-w-[180px]"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="absolute -bottom-4 -left-4 md:-left-10 bg-amber-400 p-5 md:p-7 rounded-[2.5rem] shadow-2xl border-4 border-white cursor-pointer group/sale"
                 >
-                  <div className="flex flex-col items-center text-center">
-                    {/* Icon chota kar diya mobile ke liye */}
-                    <Zap size={16} className="text-white mb-0.5 animate-pulse md:size-[24px]" fill="white" />
-
-                    <p className="text-[8px] md:text-[10px] font-black text-amber-900 uppercase tracking-tighter">
-                      Big Sale
-                    </p>
-
-                    {/* Text size responsive hai: mobile par chota, desktop par bada */}
-                    <p className="text-[12px] md:text-xl font-black text-slate-900 leading-tight">
-                      2nd Hand <br />
-                      <span className="text-white">AC Units</span>
-                    </p>
-
-                    {/* Button ko mobile par aur compact kar diya */}
-                    <Link
-                      to="/services"
-                      className="mt-1.5 text-[7px] md:text-[9px] font-bold bg-white/40 px-2 md:px-3 py-0.5 md:py-1 rounded-full text-slate-900 group-hover/sale:bg-white transition-colors"
-                    >
-                      VIEW STOCK
-                    </Link>
+                  <div className="flex flex-col items-center">
+                    <Zap size={24} className="text-white mb-1 animate-pulse" fill="white" />
+                    <p className="text-[10px] font-black text-amber-900 uppercase tracking-tighter">Big Sale</p>
+                    <p className="text-lg md:text-xl font-black text-slate-900 leading-tight">2nd Hand <br /> <span className="text-white">AC Units</span></p>
+                    <div className="mt-1.5 text-[7px] md:text-[9px] font-black bg-slate-900 text-white px-2 md:px-3 py-1 rounded-full uppercase tracking-widest shadow-md">
+                      Limited Stock
+                    </div>
                   </div>
                 </motion.div>
               </motion.div>
