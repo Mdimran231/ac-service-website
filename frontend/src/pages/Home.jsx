@@ -131,7 +131,7 @@ function Home() {
       {/* --- STATS / FEATURES SECTION --- */}
       <section className="py-16 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8 relative z-10">
         {[
-          { icon: <Clock size={32} />, title: "60 Min Arrival", desc: "Bhopal ke har kone mein sabse tez service." },
+          { icon: <Clock size={32} />, title: "60 Min Arrival", desc: "Patna ke har kone mein sabse tez service." },
           { icon: <Wrench size={32} />, title: "Expert Care", desc: "Certified engineers for all major AC brands." },
           { icon: <Shield size={32} />, title: "Fix Warranty", desc: "30-day service guarantee for peace of mind." }
         ].map((item, index) => (
