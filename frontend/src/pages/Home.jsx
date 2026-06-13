@@ -68,10 +68,20 @@ function Home() {
                 >
                   <div className="flex flex-col items-center">
                     <Zap size={24} className="text-white mb-1 animate-pulse" fill="white" />
-                    <p className="text-[10px] font-black text-amber-900 uppercase tracking-tighter">Big Sale</p>
-                    <p className="text-lg md:text-xl font-black text-slate-900 leading-tight">2nd Hand <br /> <span className="text-white">AC Units</span></p>
+
+                    {/* Big Sale ki jagah Specialist */}
+                    <p className="text-[10px] font-black text-amber-900 uppercase tracking-tighter">
+                      Specialist
+                    </p>
+
+                    {/* 2nd Hand AC Units ki jagah AC Installation */}
+                    <p className="text-lg md:text-xl font-black text-slate-900 leading-tight text-center">
+                      AC <br /> <span className="text-white">Installation</span>
+                    </p>
+
+                    {/* Limited Stock ki jagah Service/Expert badge ya blank (maine isko professional service badge bana diya hai) */}
                     <div className="mt-1.5 text-[7px] md:text-[9px] font-black bg-slate-900 text-white px-2 md:px-3 py-1 rounded-full uppercase tracking-widest shadow-md">
-                      Limited Stock
+                      Expert Service
                     </div>
                   </div>
                 </motion.div>
